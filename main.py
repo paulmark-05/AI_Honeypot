@@ -9,6 +9,13 @@ import json
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": "Honeypot service is running"
+    }
+
 
 @app.post("/api/message")
 async def receive_message(
